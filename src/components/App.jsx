@@ -21,13 +21,6 @@ export default function App() {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  useEffect(() => {
-    return window.localStorage.setItem(
-      'contacts',
-      JSON.stringify(defaultContacts)
-    );
-  }, []);
-
   const formSubmitHandle = data => {
     const sameName = contacts.map(contact => contact.name).includes(data.name);
     if (sameName) {
